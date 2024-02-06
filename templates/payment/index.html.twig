@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Procédez au paiement
+{% endblock %}
+
+{% block body %}
+	<div class="border rounded-3 p-4 bg-white shadow">
+		{{ form_start(form) }}
+		<div class="mb-3">
+			{{ form_widget(form.client, {
+            'attr': {
+                'class': 'form-select'
+            }
+        }) }}
+			<div class="form-text">Choisissez le client qui effectue le paiement</div>
+		</div>
+		<div class="mb-3">
+			{{ form_widget(form.offre, {
+            'attr': {
+                'class': 'form-select'
+            }
+        }) }}
+			<div class="form-text">Choisissez l'offre à payer</div>
+		</div>
+		{{ form_row(form.submit, {
+        'attr': {
+            'class': 'btn btn-primary'
+        }
+    }) }}
+		{{ form_end(form) }}
+	</div>
+{% endblock %}
